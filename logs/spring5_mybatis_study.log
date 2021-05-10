@@ -1,0 +1,3 @@
+[DEBUG] [2021-05-10 16:44] testDataSource()
+[DEBUG] [2021-05-10 16:44] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-05-10 16:44] LoginTimeout 30
