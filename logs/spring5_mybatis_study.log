@@ -25,3 +25,8 @@
 [DEBUG] [2021-05-10 16:56] LoginTimeout 30
 [DEBUG] [2021-05-10 16:56] testOpenSession()
 [DEBUG] [2021-05-10 16:56] session org.apache.ibatis.session.defaults.DefaultSqlSession@c9afea0
+[DEBUG] [2021-05-10 22:14] testDataSource()
+[DEBUG] [2021-05-10 22:14] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-05-10 22:14] LoginTimeout 30
+[DEBUG] [2021-05-10 22:14] testOpenSession()
+[DEBUG] [2021-05-10 22:14] session org.apache.ibatis.session.defaults.DefaultSqlSession@467a9b55
