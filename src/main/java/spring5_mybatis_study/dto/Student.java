@@ -9,6 +9,7 @@ public class Student {
 	private PhoneNumber phone;
 	private Date dob;
 	private Address address;
+	private Gender gender;
 
 	public int getStudId() {
 		return studId;
@@ -58,10 +59,19 @@ public class Student {
 		this.address = address;
 	}
 
+	
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("Student [studId=%s, name=%s, email=%s, phone=%s, dob=%s, address=%s]", studId, name,
-				email, phone, dob, address);
+		return String.format("Student [studId=%s, name=%s, email=%s, phone=%s, dob=%s, address=%s, gender=%s]", studId,
+				name, email, phone, dob, address, gender==Gender.FEMALE?"여자":(gender==Gender.MALE?"남자":"없음"));
 	}
 
 }

@@ -36,7 +36,7 @@ select t.tutor_id
   from tutors t join courses c on t.tutor_id=c.tutor_id
  where t.tutor_id = 1;
 
-         
+delete from students where stud_id > 2;       
          
          
          

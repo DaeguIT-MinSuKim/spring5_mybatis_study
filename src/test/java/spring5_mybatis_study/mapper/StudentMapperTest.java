@@ -20,6 +20,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import spring5_mybatis_study.config.ContextRoot;
+import spring5_mybatis_study.dto.Gender;
 import spring5_mybatis_study.dto.PhoneNumber;
 import spring5_mybatis_study.dto.Student;
 
@@ -143,4 +144,34 @@ public class StudentMapperTest {
 		
 		log.debug(seletedStd.toString());
 	}
+	
+	@Test
+	public void test11InsertEnumStudent() {
+	    log.debug(Thread.currentThread().getStackTrace()[1].getMethodName()+"()");
+
+	    Calendar newDate = GregorianCalendar.getInstance();
+	    newDate.set(1990, 2, 28);
+	    Student student = new Student();
+	    student.setStudId(3);
+	    student.setName("test");
+	    student.setEmail("test@test.co.kr");
+	    student.setDob(newDate.getTime());
+	    student.setPhone(new PhoneNumber("010-1234-1234"));
+	    student.setGender(Gender.FEMALE);
+	    int res = mapper.insertEnumStudent(student);
+	    Assert.assertEquals(1, res);
+	        
+	    student.setStudId(4);
+	    student.setName("test4");
+	    student.setEmail("test4@test.co.kr");
+	    student.setDob(newDate.getTime());
+	    student.setPhone(new PhoneNumber("010-1234-1234"));
+	    student.setGender(Gender.MALE);
+	    int res1 = mapper.insertEnumStudent(student);
+	    Assert.assertEquals(1, res1);
+	        
+	//  mapper.deleteStudent(3);
+	//  mapper.deleteStudent(4);
+	}
+
 }

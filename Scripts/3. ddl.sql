@@ -57,3 +57,13 @@ create table course_enrollment(
 	constraint fk_enrollment_course foreign key (course_id) 
 	references courses (course_id)
 ) comment '수강등록';
+
+
+ALTER TABLE students ADD gender tinyint unsigned;
+
+
+
+
+
+
+
