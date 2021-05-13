@@ -39,7 +39,31 @@ select t.tutor_id
 
 delete from students where stud_id > 2;       
          
-         
+select course_id, name, description, start_date, end_date, tutor_id  
+  from courses;
+ 
+select course_id, name, description, start_date, end_date, tutor_id  
+  from courses
+ where course_id in (1,2);
+
+insert couses value(), (), ();
+
+
+select course_id, name, description, start_date, end_date, tutor_id  
+  from courses
+ where name like '%java%';
+
+select course_id, name, description, start_date, end_date, tutor_id  
+  from courses
+ where start_date >= '2013-02-01';
+
+select course_id, name, description, start_date, end_date, tutor_id  
+  from courses
+ where end_date <= '2013-07-01';
+
+select course_id, name, description, start_date, end_date, tutor_id  
+  from courses
+ where start_date >= '2013-02-01' and end_date <= '2013-07-01';
          
          
          

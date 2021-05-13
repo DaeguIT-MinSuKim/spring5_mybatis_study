@@ -122,6 +122,18 @@
 	    <include refid="whereSQL"/>
 	</select>
 	
+	<!-- 동적 SQL set조건 -->
+	<update id="updateSetStudent" parameterType="Student">
+	    update students
+	    <set>
+	        <if test="name neq null">name=#{name},</if>
+	        <if test="email neq null">email=#{email},</if>
+	        <if test="phone neq null">phone=#{phone},</if>
+	        <if test="dob neq null">dob=#{dob},</if>
+	    </set>
+	    <include refid="whereSQL"/>
+	</update>
+	
 </mapper>
 
 
