@@ -1,5 +1,7 @@
 package spring5_mybatis_study.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.junit.After;
@@ -38,4 +40,13 @@ public class CourseStatMapperTest {
 		log.debug(stat.toString());
 	}
 
+	@Test
+	public void testGetCourseCount() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName()+"()");
+		
+		List<CourseStat> list = mapper.getCourseCount();
+		Assert.assertNotNull(list);
+		
+		list.forEach(s->log.debug(s.toString()));
+	}
 }

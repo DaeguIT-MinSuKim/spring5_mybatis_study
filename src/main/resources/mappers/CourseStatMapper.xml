@@ -6,4 +6,7 @@
 		{ call course_total(#{param1, mode=IN, jdbcType=INTEGER}) }
 	</select>
 	
+	<select id="getCourseCount" statementType="CALLABLE" resultType="CourseStat">
+		{ call course_total_group() }
+	</select>
 </mapper>
