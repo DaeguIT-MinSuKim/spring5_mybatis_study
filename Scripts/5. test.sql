@@ -66,6 +66,11 @@ select course_id, name, description, start_date, end_date, tutor_id
  where start_date >= '2013-02-01' and end_date <= '2013-07-01';
          
          
-         
-         
+select tutor_id, name, email, phone, dob, bio, pic, addr_id
+  from tutors
+ where tutor_id = 1;
+
+delete 
+  from tutors 
+ where tutor_id = 5;
          

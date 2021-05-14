@@ -15,7 +15,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import spring5_mybatis_study.config.ContextRoot;
+import spring5_mybatis_study.dto.Address;
 import spring5_mybatis_study.dto.Course;
+import spring5_mybatis_study.dto.PhoneNumber;
 import spring5_mybatis_study.dto.Tutor;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,7 +35,7 @@ public class TutorMapperTest {
 	}
 	
 	@Test
-	public void testSelectTutorByTutorId() {
+	public void test01SelectTutorByTutorId() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 		
 		Tutor findTutor = new Tutor();
@@ -49,4 +51,41 @@ public class TutorMapperTest {
         list.stream().forEach(t->log.debug(t.toString()));
 	}
 
+	@Test
+	public void test02InsertTutor() {
+	    log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+	    
+	    Address address = new Address();
+	    address.setAddrId(2);
+	    
+	    PhoneNumber phone = new PhoneNumber("010-2222-2222");
+	    
+	    Tutor tutor = new Tutor(5, "mskim", "net94@naver.com", phone, address);
+	    int res = mapper.insertTutor(tutor);
+	    
+	    Assert.assertEquals(1, res);
+	}
+
+	@Test
+	public void test03SelectTutorById() {
+	    log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+	    Tutor tutor = new Tutor();
+	    tutor.setTutorId(5);
+	    Tutor findTutor = mapper.selectTutorById(tutor);
+	    
+	    Assert.assertNotNull(findTutor);
+	    log.debug(findTutor.toString());
+	}
+	
+	@Test
+	public void test04DeleteTutor() {
+	    log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+	    
+	    Tutor tutor = new Tutor();
+	    tutor.setTutorId(5);
+	    int res = mapper.deleteTutor(tutor.getTutorId());
+	    
+	    Assert.assertEquals(1, res);
+	}
+	
 }

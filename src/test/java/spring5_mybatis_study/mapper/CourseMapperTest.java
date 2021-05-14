@@ -240,4 +240,29 @@ public class CourseMapperTest {
 
 	}
 
+	@Test
+	public void test12insertCourse() {
+	    log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
+	    Course course = new Course(7, "oracle", "database", new Date(), new Date(), 4);
+	    int res = mapper.insertCourse(course);
+	    Assert.assertEquals(1, res);
+	}
+
+	@Test
+	public void test13SelectCourseById() {
+	    log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+
+	    Course course = mapper.selectCourseById(7);
+		log.debug(course.toString());
+		Assert.assertNotNull(course);
+	}
+	
+	@Test
+	public void test14DeleteCourse() {
+	    log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+	    
+	    int res = mapper.deleteCourse(7);
+	    Assert.assertEquals(1, res);
+	}
 }

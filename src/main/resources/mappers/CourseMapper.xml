@@ -152,6 +152,25 @@
 		</set>
 		 where course_id = #{courseId}
 	</update>
+	
+	<!-- transaction -->
+	<select id="selectCourseById" resultType="Course">
+		SELECT course_id, name, description, start_date, end_date, tutor_id  
+		  FROM courses
+		 WHERE course_id = #{courseId}
+	</select>
+	
+	<insert id="insertCourse" parameterType="Course">
+	    INSERT INTO COURSES(COURSE_ID, NAME, DESCRIPTION, START_DATE, END_DATE, TUTOR_ID) 
+	    VALUES (#{courseId}, #{name},#{description},#{startDate},#{endDate},#{tutorId}) 
+	</insert>
+	
+	<delete id="deleteCourse" >
+	    DELETE 
+	      FROM COURSES
+	     WHERE COURSE_ID=#{courseId}
+	</delete>
+	
 </mapper>
 
 
