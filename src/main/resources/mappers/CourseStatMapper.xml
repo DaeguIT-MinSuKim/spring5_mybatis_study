@@ -9,4 +9,5 @@
 	<select id="getCourseCount" statementType="CALLABLE" resultType="CourseStat">
 		{ call course_total_group() }
 	</select>
+	
 </mapper>
